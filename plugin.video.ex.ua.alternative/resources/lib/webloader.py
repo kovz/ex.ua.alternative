@@ -34,10 +34,13 @@ class Opener(object):
                ('Accept-Charset', 'UTF-8'),
                ('Accept', 'text/html'),
                ('Connection', 'keep-alive')]
-
+    google_bot_user_agent = ('User-Agent', 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)')
+    
     def __init__(self, handler=urllib2.BaseHandler(), host='www.ex.ua', language=''):
         """Class constructor"""
         self.opener = urllib2.build_opener(handler)
+        if use_google_bot:
+            headers[0] = google_bot_user_agent
         self.headers.append(('Host', host))
         if language:
             self.headers.append(('Accept-Language', language))
