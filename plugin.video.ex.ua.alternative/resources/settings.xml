@@ -35,7 +35,9 @@
         label="Удалить cookies (сброс авторизации)" action="RunScript($CWD/resources/lib/commands.py,cookies)" />
   </category>
   <category label="Дополнительно">
-  <setting id="direct_link" type="bool"
+    <setting id="direct_link" type="bool"
         label="Получать прямую ссылку на видеофайл" default="false"/>
+    <setting id="use_google_bot" type="bool"
+        label="Использовать GoogleBot UserAgent. Для доступа из-за границы." default="false"/>
   </category>
 </settings>
